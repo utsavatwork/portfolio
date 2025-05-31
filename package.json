@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
+    "build": "webpack",
     "start": "webpack serve --config webpack.config.mjs --mode development"
   },
   "type": "module",
