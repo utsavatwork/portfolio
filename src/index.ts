@@ -9,7 +9,7 @@ window.scrollTo({
   behavior: 'auto', // Instant positioning
 });
 
-// Main entry point
+// Main entry point function
 window.addEventListener('DOMContentLoaded', () => {
   customElements.define('app-canvas', Canvas);
   customElements.define("mini-map", MiniMap);
