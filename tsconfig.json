@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",               // Use modern JavaScript (ES6+)
+    "module": "ESNext",             // Allow latest module syntax
+    "strict": true,                 // Enable TypeScript's strict mode
+    "noImplicitAny": true,          // Disallow implicit `any` types
+    "removeComments": true,         // Clean output by removing comments
+    "outDir": "dist",               // Compiled files go to `dist/`
+    "rootDir": "src",               // Keep source files inside `src/`
+    "allowSyntheticDefaultImports": true // Enable module imports easily
+  },
+  "include": ["src/**/*.ts", "src/index.ts"],        // Only compile TypeScript files inside `src/`
+  "exclude": ["node_modules"]        // Ignore dependencies from compilation
+}
