@@ -63,8 +63,8 @@ export class MiniMap extends HTMLElement {
       <style>
         :host {
           position: fixed;
-          bottom: 1rem;
-          right: 1rem;
+          bottom: 1.5rem;
+          right: 1.5rem;
           z-index: 50;
         }
         .button {
@@ -74,9 +74,10 @@ export class MiniMap extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          box-shadow: 0 5px 8px rgba(0,0,0,0.15);
           border: none;
           cursor: pointer;
+          border-radius: 12px;
         }
         #minimap-container {
           width: 25vw;
@@ -86,14 +87,14 @@ export class MiniMap extends HTMLElement {
           right: 2vw;
           box-shadow: 0 4px 10px rgba(0,0,0,0.2);
           z-index: 50;
+          border-radius: 16px;
         }
         .close-btn {
           position: absolute;
           top: 0.5rem;
           right: 0.5rem;
-          width: 2rem;
-          height: 2rem;
-          background: rgba(0,0,0,0.1);
+          width: 1rem;
+          height: 1rem;
           border-radius: 4px;
           border: none;
           cursor: pointer;
@@ -106,11 +107,11 @@ export class MiniMap extends HTMLElement {
           height: 100%;
         }
         .grid-cell {
-          border: 1px solid #ccc;
+          /* border: 1px solid #ccc; */
           cursor: pointer;
         }
         .active {
-          border: 2px solid blue;
+          background-color: #efefef; 
           opacity: 0.8;
         }
         #mini-canvas {
@@ -127,7 +128,9 @@ export class MiniMap extends HTMLElement {
 
       ${this.isOpen ? `
         <div id="minimap-container">
-          <button class="close-btn" onclick="this.getRootNode().host.toggleOpen()">✖</button>
+          <button class="close-btn" onclick="this.getRootNode().host.toggleOpen()">
+            <i class="ri-close-line"></i>
+          </button>
           <div class="grid">
             ${[0,1,2].map(row => 
               [0,1,2].map(col => `<div data-row="${row}" data-col="${col}" class="grid-cell ${this.activeSection.row === row && this.activeSection.col === col ? 'active' : ''}"></div>`).join("")

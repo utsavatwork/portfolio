@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.4",
+    "remixicon": "^4.6.0"
   },
   "devDependencies": {
     "ts-loader": "^9.5.2",

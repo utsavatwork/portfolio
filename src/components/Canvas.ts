@@ -54,7 +54,10 @@ export class Canvas extends HTMLElement {
       div.style.top = `${row * 100}vh`;
       div.style.left = `${col * 100}vw`;
       if (row === 1 && col === 1) {
-        div.innerHTML = `<h1 id="home-section">Home Section Content</h1>`;
+        div.innerHTML = `<home-page></home-page>`;
+      } else if (row === 0 && col === 0) {
+        const edu = document.createElement('education-section');
+        div.appendChild(edu);
       } else {
         div.innerHTML = `<in-progress-card></in-progress-card>`;
       }
