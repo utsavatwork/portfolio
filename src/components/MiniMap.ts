@@ -88,6 +88,7 @@ export class MiniMap extends HTMLElement {
           box-shadow: 0 4px 10px rgba(0,0,0,0.2);
           z-index: 50;
           border-radius: 16px;
+          overflow: hidden;
         }
         .close-btn {
           position: absolute;

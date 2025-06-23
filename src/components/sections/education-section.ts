@@ -8,7 +8,6 @@ export class EducationSection extends HTMLElement {
       align-items: center;
       justify-content: center;
       height: 100%;
-      background-color: #f0f0f0;
     }
   `;
 

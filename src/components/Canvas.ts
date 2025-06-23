@@ -69,8 +69,6 @@ export class Canvas extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot?.appendChild(this.init());
-
-
   }
 }
 
