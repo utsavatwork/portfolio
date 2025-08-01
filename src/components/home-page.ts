@@ -4,11 +4,15 @@ export class HomePage extends HTMLElement {
   private static readonly styling = `
     .container {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100%;
-      background-color: #f0f0f0;
+      gap: 4vw;
+    }
+    img {
+      border-radius: 50%;
+      width: 20vw;
+      height: auto;
     }
   `
 
@@ -27,12 +31,18 @@ export class HomePage extends HTMLElement {
   }
 
   rerender() {
-    this.shadowDom.innerHTML = `<div class="container">
-      <h1>Utsav Tayde</h1>
-      <p>
-        <strong>Software Engineer</strong><br>
-        <i class='ri-map-pin-fill'></i>Pune, India
-      </p>
-    </div>`;
+    this.shadowDom.innerHTML = `
+      <style>${HomePage.styling}</style>
+      <div class="container">
+        <img src="/public/me.jpg" />
+        <div>
+          <h1>Utsav Tayde</h1>
+          <p>
+            <strong>Software Engineer</strong><br>
+            <i class='ri-map-pin-fill'></i>Pune, India
+          </p>
+        </div>
+      </div>
+    `;
   }
 }
