@@ -4,10 +4,7 @@ export default defineConfig({
   root: './src',
   build: {
     outDir: '../dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: 'src/main.tsx' // Set main.tsx as entry
-    }
+    emptyOutDir: true
   },
   esbuild: {
     jsx: 'transform',
