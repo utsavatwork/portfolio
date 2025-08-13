@@ -1,0 +1,116 @@
+/* Charcoal Elite Theme - Essential Base Styles */
+
+/* CSS Custom Properties - Keep for reference and direct CSS usage */
+:root {
+  /* Core Colors */
+  --charcoal-primary: #0A0A0B;     /* Ultra dark background */
+  --charcoal-secondary: #1A1A1C;   /* Dark surface */
+  --charcoal-surface: #2D2D30;     /* Elevated elements */
+  --charcoal-accent: #D4AF37;      /* Elegant gold */
+  --charcoal-text: #F5F5F5;        /* Clean white text */
+  --charcoal-muted: #A8A8A8;       /* Secondary text */
+  
+  /* Extended Palette */
+  --charcoal-accent-light: #E6C856;  /* Lighter gold */
+  --charcoal-accent-dark: #B8941F;   /* Darker gold */
+  --charcoal-border: #3A3A3D;        /* Subtle borders */
+  --charcoal-hover: #404043;         /* Hover states */
+  
+  /* Glass Effects */
+  --glass: rgba(42, 42, 48, 0.5);
+  --glass-border: rgba(168, 168, 168, 0.1);
+  --glass-backdrop: blur(12px);
+  
+  /* Shadows */
+  --shadow-dark: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-dark-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Essential Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--charcoal-primary);
+  color: var(--charcoal-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Hide scrollbars but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Material Icons Configuration */
+.material-icons {
+  vertical-align: middle;
+}
+
+.material-icons.with-text {
+  vertical-align: middle;
+  margin-right: 0.75vw;
+}
+
+.material-icons.large {
+  font-size: larger;
+}
+
+/* Custom Scrollbar Styling (for when needed) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  display: block;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--charcoal-primary);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--charcoal-surface);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--charcoal-accent);
+}
+
+/* Text Selection Styling */
+::selection {
+  background-color: var(--charcoal-accent);
+  color: var(--charcoal-primary);
+}
+
+/* Typography Base - Let Tailwind handle specific sizing */
+p {
+  color: var(--charcoal-muted);
+  margin: 0 0 1rem 0;
+}
+
+/* Focus States Enhancement */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
+  border-radius: 4px;
+}
+
+/* Responsive Base Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .material-icons.with-text {
+    margin-right: 8px;
+  }
+}

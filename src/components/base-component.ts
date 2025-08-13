@@ -14,13 +14,25 @@ export abstract class BaseComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    this.shadowDom.appendChild(this.stylingElement);
+    this.shadowDom.innerHTML = '';
+    this.addStyling('');
     this.rerender();
+  }
+
+  disconnectedCallback() {
+    // TODO: Research about what is suppose to be in here.
   }
 
   abstract rerender(): void;
   
   addStyling(cssRules: string): void {
+    // Add materialize icons library
+    const materializeIconLib = document.createElement('link')
+    materializeIconLib.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+    materializeIconLib.rel = 'stylesheet';
+    this.shadowDom.appendChild(materializeIconLib);
+
     this.stylingElement.textContent += cssRules;
+    this.shadowDom.appendChild(this.stylingElement);
   }
 }

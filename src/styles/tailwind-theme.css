@@ -1,0 +1,180 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Base Styles */
+@layer base {
+  /* Selection color */
+  ::selection {
+    @apply bg-accent-500/20 text-dark-50;
+  }
+  
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-500/50 ring-offset-2 ring-offset-dark-900;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-glass backdrop-blur-md border border-glass-border;
+  }
+  
+  .glass-strong {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-dark-50 to-dark-200 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-600 hover:bg-accent-500 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-dark-700 hover:bg-dark-600 text-dark-100 font-medium rounded-lg transition-all duration-200 border border-dark-600 hover:border-dark-500;
+  }
+  
+  .btn-ghost {
+    @apply px-6 py-3 text-dark-200 hover:text-dark-50 hover:bg-dark-800 font-medium rounded-lg transition-all duration-200;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-dark-800 border border-dark-700 rounded-xl p-6 shadow-dark-lg;
+  }
+  
+  .card-glass {
+    @apply glass rounded-xl p-6 shadow-glass;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:transform hover:scale-105 hover:shadow-dark-xl;
+  }
+  
+  /* Input fields */
+  .input {
+    @apply w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-dark-100 placeholder-dark-400 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors;
+  }
+  
+  /* Links */
+  .link {
+    @apply text-accent-400 hover:text-accent-300 transition-colors duration-200 underline decoration-accent-400/30 hover:decoration-accent-300/50 underline-offset-4;
+  }
+  
+  .link-subtle {
+    @apply text-dark-300 hover:text-dark-100 transition-colors duration-200;
+  }
+  
+  /* Dividers */
+  .divider {
+    @apply border-dark-700;
+  }
+  
+  /* Loading states */
+  .skeleton {
+    @apply animate-pulse bg-dark-700 rounded;
+  }
+  
+  /* Status badges */
+  .badge-success {
+    @apply px-2 py-1 bg-success/20 text-success text-sm rounded-full border border-success/30;
+  }
+  
+  .badge-warning {
+    @apply px-2 py-1 bg-warning/20 text-warning text-sm rounded-full border border-warning/30;
+  }
+  
+  .badge-error {
+    @apply px-2 py-1 bg-error/20 text-error text-sm rounded-full border border-error/30;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-dark-300 hover:text-dark-50 px-4 py-2 rounded-lg transition-all duration-200 relative;
+  }
+  
+  .nav-link.active {
+    @apply text-dark-50 bg-dark-800;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-1/2 w-0 h-0.5 bg-accent-500 transition-all duration-300 transform -translate-x-1/2;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Spacing utilities */
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
+  /* Animation utilities */
+  .animate-in {
+    @apply animate-fade-in-up;
+  }
+  
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-sm {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-md {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
+  }
+  
+  /* Background patterns */
+  .bg-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+}
