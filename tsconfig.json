@@ -1,14 +1,49 @@
 {
   "compilerOptions": {
-    "target": "ES6",               // Use modern JavaScript (ES6+)
-    "module": "ESNext",             // Allow latest module syntax
-    "strict": true,                 // Enable TypeScript's strict mode
-    "noImplicitAny": true,          // Disallow implicit `any` types
-    "removeComments": true,         // Clean output by removing comments
-    "outDir": "dist",               // Compiled files go to `dist/`
-    "rootDir": "src",               // Keep source files inside `src/`
-    "allowSyntheticDefaultImports": true // Enable module imports easily
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler", // node
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "allowImportingTsExtensions": true, // false
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true, // false
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path mapping and includes */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "@/components/*": ["components/*"],
+      "@/assets/*": ["assets/*"],
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"]
+    },
+
+    /* Include type definitions */
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "types": ["node"],
+
+    "useDefineForClassFields": true,
+
   },
-  "include": ["src/**/*.ts", "src/index.ts"],        // Only compile TypeScript files inside `src/`
-  "exclude": ["node_modules"]        // Ignore dependencies from compilation
+  "include": [
+    "src/**/*",
+    "src/types/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
