@@ -1,7 +1,7 @@
 import { h } from "../../jsx-runtime";
 
 export class ProjectsSection {
-  static render = (): HTMLElement => {
+  static build = (): HTMLElement => {
     return (
       <div className='w-screen flex flex-col justify-start items-start'>
         <div className="mb-8">

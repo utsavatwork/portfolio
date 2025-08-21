@@ -8,7 +8,7 @@ export class MiniMap {
 
   private handleToggle = (): void => {
     this.isOpen = !this.isOpen;
-    this.render();
+    this.build();
   };
 
   private handleCellClick = (row: number, col: number) => (): void => {
@@ -18,7 +18,7 @@ export class MiniMap {
       left: this.activeSection.col * window.innerWidth,
       behavior: "smooth",
     });
-    this.render();
+    this.build();
   };
 
   private getButton(): HTMLElement {
@@ -34,9 +34,9 @@ export class MiniMap {
 
   private getContainer(): HTMLElement {
     return (
-      <div className="w-[25vw] h-[25vh] fixed bottom-[3vh] right-[2vw] rounded-2xl overflow-hidden backdrop-blur-sm shadow-sm shadow-accent-300">
+      <div className="w-[25vw] h-[25vh] bg-dark-700 fixed bottom-[3vh] right-[2vw] rounded-2xl overflow-hidden backdrop-blur-sm">
         <button 
-          className="absolute top-2 right-2 w-8 h-8 border-none cursor-pointer text-gray-800 bg-dark-200 rounded-full flex items-center justify-center z-10 hover:bg-dark-50 transition-colors"
+          className="absolute top-2 right-2 w-6 h-6 border-none cursor-pointer text-gray-800 bg-dark-200 rounded-full flex items-center justify-center z-10 hover:bg-dark-50 transition-colors"
           onClick={this.handleToggle}
         >
           <i className="material-icons text-base">close</i>
@@ -67,13 +67,13 @@ export class MiniMap {
           }}
           id="mini-canvas"
         >
-          {Canvas.render()}
+          {Canvas.build()}
         </div>
       </div>
     );
   }
 
-  public render(): HTMLElement {
+  public build(): HTMLElement {
     MiniMap.container.innerHTML = '';
     MiniMap.container.appendChild(<div className="fixed bottom-6 right-6 z-[5000]">
       {this.isOpen ? this.getContainer() : this.getButton()}

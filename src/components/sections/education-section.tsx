@@ -1,7 +1,7 @@
 import { h } from "../../jsx-runtime";
 
 export class EducationSection {
-  static render = (): HTMLElement => {
+  static build = (): HTMLElement => {
     return (
       <div className='w-full flex flex-col justify-center items-start container-padding section-padding'>
         {/* Section Title */}

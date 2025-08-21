@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  background-color: var(--charcoal-primary);
+  background-color: var(--charcoal-secondary);
   color: var(--charcoal-text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;

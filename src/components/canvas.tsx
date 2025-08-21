@@ -15,7 +15,7 @@ export class Canvas {
     });
   }
 
-  static render = (): HTMLDivElement => {
+  static build = (): HTMLDivElement => {
     const container = 
         <div className="relative w-[300vw] h-[300vh] overflow-hidden"></div> as HTMLDivElement;
     
@@ -30,13 +30,13 @@ export class Canvas {
           gridItem.appendChild(HomePage.render());
           break;
         case '0-0':
-          gridItem.appendChild(EducationSection.render());
+          gridItem.appendChild(EducationSection.build());
           break;
         case '0-2':
-          gridItem.appendChild(ExperienceSection.render());
+          gridItem.appendChild(ExperienceSection.build());
           break;
         case '0-1':
-          gridItem.appendChild(ProjectsSection.render());
+          gridItem.appendChild(ProjectsSection.build());
           break;
         default:
           break;
